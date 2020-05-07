@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import WebViewBridge from 'react-native-webview-bridge';
+import { WebView } from 'react-native-webview'; // WebViewBridge
 import {InjectedMessageHandler} from './WebviewMessageHandler';
 import {actions, messages} from './const';
 import {Modal, View, Text, StyleSheet, TextInput, TouchableOpacity, Platform, PixelRatio, Keyboard, Dimensions} from 'react-native';
@@ -301,7 +301,7 @@ export default class RichTextEditor extends Component {
     const rootStyle = PlatformIOS ? { flex: 1 } : { flex: 1, marginBottom: (keyboardHeight + bottomSpacing) }
     return (
       <View style={rootStyle}>
-        <WebViewBridge
+        <WebView
           hideKeyboardAccessoryView={true}
           keyboardDisplayRequiresUserAction={false}
           {...this.props}
